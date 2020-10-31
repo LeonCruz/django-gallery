@@ -1,6 +1,11 @@
 from django.shortcuts import render
+from django.views.decorators.http import require_http_methods
+
+from .forms import SignupForm
 
 
 # Create your views here.
+@require_http_methods(["GET"])
 def index(request):
-    return render(request, "accounts/index.html")
+    signup_form = SignupForm()
+    return render(request, "accounts/index.html", {"form": signup_form})
