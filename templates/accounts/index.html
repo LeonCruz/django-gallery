@@ -15,6 +15,24 @@
 
         <div class="field is-horizontal">
           <div class="field-label">
+            <label class="label" for="{{ form.full_name.id_for_label }}">Nome completo</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+                <div class="control">
+                {{ form.full_name }}
+              </div>
+              {% if form.full_name.errors %}
+                <div class="tag is-danger is-light is-medium">
+                  {{ form.full_name.errors }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label">
             <label class="label" for="{{ form.username.id_for_label }}">Username</label>
           </div>
           <div class="field-body">
