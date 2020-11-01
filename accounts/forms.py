@@ -14,3 +14,14 @@ class SignupForm(forms.ModelForm):
             "email": forms.EmailInput(attrs={"class": "input"}),
             "password": forms.PasswordInput(attrs={"class": "input"}),
         }
+
+    def save(self):
+        data = self.cleaned_data
+        user = User(
+            full_name=data["full_name"],
+            username=data["username"],
+            email=data["email"],
+            password=data["password"],
+        )
+        user.set_password(data["password"])
+        user.save()
