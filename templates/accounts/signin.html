@@ -1,0 +1,62 @@
+{% extends 'accounts/base.html' %}
+
+{% block title %} Sign In {% endblock %}
+
+{% block content %}
+
+  <div class="columns is-centered">
+    <div class="column is-half">
+      <form action="{% url 'accounts:signin' %}" method="post">
+        {% csrf_token %}
+
+        {% for message in messages %}
+          <div class="tag is-danger is-light is-medium">
+            {{ message }}
+          </div>
+        {% endfor %}
+
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label" for="{{ form.username.id_for_label }}">
+              Username
+            </label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                {{ form.username }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label" for="{{ form.password.id_for_label }}">
+              Senha
+            </label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                {{ form.password }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label">
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <button type="submit" class="button is-primary">Entrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

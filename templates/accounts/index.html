@@ -6,11 +6,6 @@
   <div class="columns is-centered">
     <div class="column is-half">
         <form action="{% url 'accounts:signup' %}" method="post">
-        {% for message in messages %}
-          <p>{{ message }}</p>
-        {% empty %}
-        {% endfor %}
-
         {% csrf_token %}
 
         <div class="field is-horizontal">

@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.forms import AuthenticationForm
 
 from .models import User
 
@@ -25,3 +26,7 @@ class SignupForm(forms.ModelForm):
         )
         user.set_password(data["password"])
         user.save()
+
+
+class SignInForm(AuthenticationForm):
+    pass
