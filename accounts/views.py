@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
 from django.views.decorators.http import require_http_methods
 
@@ -36,10 +36,15 @@ def signin(request):
 
         if user is not None:
             login(request, user)
-            return redirect("profile:profile", username=username)
+            return redirect("profile:profile")
 
         messages.error(request, "Os dados fornecidos são inválidos")
         return redirect("accounts:signin")
 
     signin_form = SignInForm()
     return render(request, "accounts/signin.html", {"form": signin_form})
+
+
+def signout(request):
+    logout(request)
+    return redirect("accounts:signin")
