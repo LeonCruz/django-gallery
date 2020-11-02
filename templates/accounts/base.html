@@ -7,6 +7,22 @@
   <title>Gallery - {% block title %} {% endblock %}</title>
 </head>
 <body>
+  <header class="mt-2 mr-3">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-menu">
+        <div class="navbar-start"><a class="navbar-item" href="">Inicio</a></div>
+        <div class="navbar-end">
+          <div class="navbar-items">
+            <div class="buttons">
+              <a class="button is-primary" href="{% url 'accounts:signup' %}"><strong>Cadastre-se</strong></a>
+              <a class="button is-light" href="{% url 'accounts:signin' %}">Entrar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
   <div class="container">
     {% block content %}
     {% endblock %}
