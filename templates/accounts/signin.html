@@ -4,8 +4,8 @@
 
 {% block content %}
 
-  <div class="columns is-centered">
-    <div class="column is-half">
+  <div class="columns is-centered is-vcentered" style="height: 90vh;">
+    <div class="column is-two-fifths">
       <form action="{% url 'accounts:signin' %}" method="post">
         {% csrf_token %}
 

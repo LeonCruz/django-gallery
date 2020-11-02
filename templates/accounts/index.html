@@ -3,7 +3,7 @@
 {% block title %} Sign Up {% endblock %}
 
 {% block content %}
-  <div class="columns is-centered">
+  <div class="columns is-centered is-vcentered" style="height: 90vh">
     <div class="column is-half">
         <form action="{% url 'accounts:signup' %}" method="post">
         {% csrf_token %}
