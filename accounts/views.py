@@ -36,8 +36,7 @@ def signin(request):
 
         if user is not None:
             login(request, user)
-            print("login realizado")
-            return redirect("accounts:signup")
+            return redirect("profile:profile", username=username)
 
         messages.error(request, "Os dados fornecidos são inválidos")
         return redirect("accounts:signin")
