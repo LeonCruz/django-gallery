@@ -16,6 +16,7 @@
             <div class="buttons">
               {% if user.is_authenticated %}
                 <a class="button is-light" href="{% url 'accounts:signout' %}">Sair</a>
+                <a class="button is-primary" href="{% url 'upload:index' %}">Adicionar foto</a>
               {% else %}
                 <a class="button is-primary" href="{% url 'accounts:signup' %}"><strong>Cadastre-se</strong></a>
                 <a class="button is-light" href="{% url 'accounts:signin' %}">Entrar</a>
