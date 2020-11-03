@@ -3,5 +3,30 @@
 {% block title %} Enviar imagem {% endblock %}
 
 {% block content %}
-  <h1>Olá</h1>
+  <div class="columns is-centered">
+    <div class="column is-one-quarter">
+      <form action="{% url 'upload:index' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="file">
+          <label class="file-label">
+            <input class="file-input" type="file" name="{{ form.image.name }}"
+                                                  id="{{ form.image.id_for_label }}">
+            <span class="file-cta">
+              <span class="file-icon">
+                <i class="fas fa-upload"></i>
+              </span>
+              <span class="file-label">
+                Selecione um arquivo
+              </span>
+            </span>
+          </label>
+        </div>
+        <div class="field mt-4">
+          <div class="control">
+            <button class="button is-primary">Envar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 {% endblock %}

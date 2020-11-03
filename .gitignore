@@ -3,3 +3,4 @@
 __pyacache__/
 db.sqlite3
 .env
+uploads/
