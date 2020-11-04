@@ -17,12 +17,16 @@
   </div>
 
   <div class="columns is-centered is-multiline">
-    {% for i in lista %}
+    {% for image in images %}
     <div class="column is-4 is-justify-content-center is-align-items-center" style="display: flex;">
       <figure class="image is-128x128">
-        <img src="https://bulma.io/images/placeholders/128x128.png">
+        <img src="{{ image.image.url }}">
       </figure>
     </div>
+    {% empty %}
+      <div class="column">
+        <p class="is-size-4 has-text-centered">Você não tem nenhuma foto</p>
+      </div>
     {% endfor %}
   </div>
 {% endblock %}

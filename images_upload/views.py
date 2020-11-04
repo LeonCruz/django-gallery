@@ -25,6 +25,6 @@ class ImageUploadView(views.View):
             img.user = request.user
             img.save()
 
-            return redirect(request.path)
+            return redirect("profile:profile")
 
         return redirect(request.path)
